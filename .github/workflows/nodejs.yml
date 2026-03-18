@@ -1,0 +1,33 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Клонировать репозиторий
+        uses: actions/checkout@v5
+
+      - name: Установить Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Установить зависимости
+        run: npm ci
+
+      - name: Собрать проект
+        run: npm run build --if-present
+
+      - name: Запустить тесты
+        run: npm test
