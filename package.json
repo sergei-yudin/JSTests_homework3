@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"  },
+    "test": "jest --coverage",
+    "lint": "eslint ."
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.2",
+    "@eslint/js": "^9.39.4",
     "babel-jest": "^30.3.0",
+    "eslint": "^9.39.4",
+    "globals": "^17.4.0",
     "jest": "^30.3.0"
   },
   "dependencies": {
